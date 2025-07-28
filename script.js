@@ -1,5 +1,3 @@
-// ## VARIABLES ##
-
 // ## COMPUTER ##
 
 function getComputerChoice() {
@@ -31,7 +29,7 @@ function getHumanChoice() {
 
 // ## ROUND ##
 
-function playRoundTest(hChoice, cChoice) {
+function playRound(hChoice, cChoice) {
     hChoice = hChoice.toLowerCase()
     let outcome = ''
 
@@ -72,7 +70,13 @@ function playRoundTest(hChoice, cChoice) {
 
 }
 
+// ## GAME ##
+
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRoundTest(humanSelection, computerSelection)
+function playGame() {
+playRound(humanSelection, computerSelection)
+}
+
+playGame()
