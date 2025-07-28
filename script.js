@@ -47,11 +47,20 @@ function playRoundTest(hChoice, cChoice) {
     } else if (hChoice === 'paper' && cChoice === 'scissors') {
         console.log('ROBOT WINS')
     } else if (hChoice === 'scissors' && cChoice === 'paper') {
-console.log('FLESHTHING WINS')
+        console.log('FLESHTHING WINS')
+    } else if (hChoice === 'scissors' && cChoice === 'rock') {
+        console.log('ROBOT WINS')
+    } else if (hChoice === 'rock' && cChoice === 'scissors') {
+        console.log('FLESHTHING WINS')
+    } else if (hChoice === cChoice) {
+        console.log('YOU DRAW LOSERS!')
     }
 }
 
-playRoundTest(getHumanChoice(), getComputerChoice())
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRoundTest(humanSelection, computerSelection)
 
 // function playRound(humanChoice, computerChoice) {
 //     // humanChoice = humanChoice.toLowerCase()
@@ -67,25 +76,7 @@ playRoundTest(getHumanChoice(), getComputerChoice())
 
 //     }
 
-//     // if (humanChoice == 'rock' && computerChoice == 'scissors') {
-//     //     console.log('HUMAN WINS')
-//     // } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
-//     //     console.log('MACHINE WINS')
-//     // } else if (humanChoice == 'paper' && computerChoice == 'rock') {
-//     //     console.log('HUMAN WINS')
-//     // } else if (humanChoice == 'rock' && computerChoice == 'paper') {
-//     //     console.log('MACHINE WINS')
-//     // } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
-//     //     console.log('HUMAN WINS')
-//     // } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
-//     //     console.log('MACHINE WINS')
-//     // } else {
-//     //     console.log('whatever')
-//     // }
-// }
 
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
 
 // console.log(getHumanChoice())
 // console.log(getComputerChoice().toLowerCase() + '***')
