@@ -24,7 +24,7 @@ function getComputerChoice() {
             break;
     }
 
-    return computerChoice //display the outcome as an alert
+    return computerChoice // returning the translated outcome
 
 }
 
@@ -34,8 +34,6 @@ function getHumanChoice() {
     let humanChoice = prompt('What shall your hand be?');
     return humanChoice
 }
-
-getHumanChoice()
 
 // ## ROUND ##
 

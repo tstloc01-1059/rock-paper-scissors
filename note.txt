@@ -1,0 +1,48 @@
+//we need a computer playing
+//we need a way for a user to decide what move to make
+//a way to compare both
+//a way to track rounds
+
+//## LOGIC ##
+// rock beats scissors
+// paper beats rock
+// scissors beat paper
+
+outer variables:
+1. computer score at 0
+2. player score at 0
+
+computer:
+1. on page load, load computer function
+2. pick a random number from 0 to 2
+3. translate that number to rock, paper, or scissors
+4. return it
+
+player:
+1. on page load, generate prompt
+2. return prompt
+
+round:
+1. capture the return of the computer
+2. capture the return of the player
+3. turn player return to lowercase
+4. if player plays rock AND computer plays scissors = player wins
+    4a. print player wins
+    4b. incremenet score +1
+5. if player plays scissors AND computer plays rock = robot wins
+    5a. print robot wins
+    5b. incremenet score +1
+6. if player plays paper AND computer plays rock = player wins
+    6a. print player wins
+    6b. incremenet score +1
+7. if player plays rock AND computer plays paper = robot wins
+    7a. print robot wins
+    7b. incremenet score +1
+8. if player plays scissors AND computer plays paper = player wins
+    8a. print player wins
+    8b. incremenet score +1
+9. if player plays paper AND computer plays scissors = robot wins
+    9a. print robot wins
+    9b. incremenet score +1
+
+
