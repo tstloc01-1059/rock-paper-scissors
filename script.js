@@ -2,8 +2,8 @@
 
 // let computerChoice = ''
 // let humanChoice = prompt('What shall your hand be?') //user input of string "rock, paper, scissors"
-// let computerScore = 0
-// let humanScore = 0
+let computerScore = 0
+let humanScore = 0
 
 // ## COMPUTER ##
 
@@ -40,21 +40,40 @@ function getHumanChoice() {
 
 function playRoundTest(hChoice, cChoice) {
     hChoice = hChoice.toLowerCase()
-    if (hChoice === 'rock' && cChoice === 'paper') {
-        console.log('ROBOT WINS')
-    } else if (hChoice === 'paper' && cChoice === 'rock') {
-        console.log('FLESHTHING WINS')
-    } else if (hChoice === 'paper' && cChoice === 'scissors') {
-        console.log('ROBOT WINS')
-    } else if (hChoice === 'scissors' && cChoice === 'paper') {
-        console.log('FLESHTHING WINS')
-    } else if (hChoice === 'scissors' && cChoice === 'rock') {
-        console.log('ROBOT WINS')
-    } else if (hChoice === 'rock' && cChoice === 'scissors') {
-        console.log('FLESHTHING WINS')
-    } else if (hChoice === cChoice) {
-        console.log('YOU DRAW LOSERS!')
+    let outcome = ''
+    let rounds = 0
+    for (let i = 4; i >= rounds; i--) {
+            if (hChoice === 'rock' && cChoice === 'paper') {
+                outcome = 'ROBOT WINS'
+                computerScore += 1
+            } else if (hChoice === 'paper' && cChoice === 'rock') {
+                outcome = 'FLESHTHING WINS'
+                humanScore += 1
+            } else if (hChoice === 'paper' && cChoice === 'scissors') {
+                outcome = 'ROBOT WINS'
+                computerScore += 1
+            } else if (hChoice === 'scissors' && cChoice === 'paper') {
+                outcome = 'FLESHTHING WINS'
+                humanScore += 1
+            } else if (hChoice === 'scissors' && cChoice === 'rock') {
+                outcome = 'ROBOT WINS'
+                computerScore += 1
+            } else if (hChoice === 'rock' && cChoice === 'scissors') {
+                outcome = 'FLESHTHING WINS'
+                humanScore += 1
+            } else if (hChoice === cChoice) {
+                outcome = 'YOU DRAW LOSERS!'
+            }
+        
+            rounds++
+        
+        alert(`Guess what?! ${outcome}! ROBOT: ${computerScore} | FLESHBAG: ${humanScore}
+        This is round ${rounds}.`)
+
+        getHumanChoice()
+        getComputerChoice()
     }
+    alert('GAME OVER!')
 }
 
 const humanSelection = getHumanChoice();
