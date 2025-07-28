@@ -23,7 +23,7 @@ function getComputerChoice() {
             computerChoice = 'scissors';
             break;
     }
-
+    console.log(computerChoice + '**')
     return computerChoice // returning the translated outcome
 
 }
@@ -32,10 +32,26 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanChoice = prompt('What shall your hand be?');
+    console.log(humanChoice)
     return humanChoice
 }
 
 // ## ROUND ##
+
+function playRoundTest(hChoice, cChoice) {
+    hChoice = hChoice.toLowerCase()
+    if (hChoice === 'rock' && cChoice === 'paper') {
+        console.log('ROBOT WINS')
+    } else if (hChoice === 'paper' && cChoice === 'rock') {
+        console.log('FLESHTHING WINS')
+    } else if (hChoice === 'paper' && cChoice === 'scissors') {
+        console.log('ROBOT WINS')
+    } else if (hChoice === 'scissors' && cChoice === 'paper') {
+console.log('FLESHTHING WINS')
+    }
+}
+
+playRoundTest(getHumanChoice(), getComputerChoice())
 
 // function playRound(humanChoice, computerChoice) {
 //     // humanChoice = humanChoice.toLowerCase()
