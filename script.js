@@ -1,9 +1,7 @@
 // ## VARIABLES ##
 
-// let computerChoice = ''
-// let humanChoice = prompt('What shall your hand be?') //user input of string "rock, paper, scissors"
-let computerScore = 0
-let humanScore = 0
+let humanChoiceFunction = ''
+let computerChoiceFunction = ''
 
 // ## COMPUTER ##
 
@@ -23,7 +21,7 @@ function getComputerChoice() {
             computerChoice = 'scissors';
             break;
     }
-    console.log(computerChoice + '**')
+    computerChoiceFunction = computerChoice;
     return computerChoice // returning the translated outcome
 
 }
@@ -32,7 +30,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanChoice = prompt('What shall your hand be?');
-    console.log(humanChoice)
+    humanChoiceFunction = humanChoice
     return humanChoice
 }
 
@@ -40,39 +38,53 @@ function getHumanChoice() {
 
 function playRoundTest(hChoice, cChoice) {
     hChoice = hChoice.toLowerCase()
+    let computerScore = 0
+    let humanScore = 0
     let outcome = ''
     let rounds = 0
-    for (let i = 4; i >= rounds; i--) {
-            if (hChoice === 'rock' && cChoice === 'paper') {
-                outcome = 'ROBOT WINS'
-                computerScore += 1
-            } else if (hChoice === 'paper' && cChoice === 'rock') {
-                outcome = 'FLESHTHING WINS'
-                humanScore += 1
-            } else if (hChoice === 'paper' && cChoice === 'scissors') {
-                outcome = 'ROBOT WINS'
-                computerScore += 1
-            } else if (hChoice === 'scissors' && cChoice === 'paper') {
-                outcome = 'FLESHTHING WINS'
-                humanScore += 1
-            } else if (hChoice === 'scissors' && cChoice === 'rock') {
-                outcome = 'ROBOT WINS'
-                computerScore += 1
-            } else if (hChoice === 'rock' && cChoice === 'scissors') {
-                outcome = 'FLESHTHING WINS'
-                humanScore += 1
-            } else if (hChoice === cChoice) {
-                outcome = 'YOU DRAW LOSERS!'
-            }
-        
-            rounds++
-        
-        alert(`Guess what?! ${outcome}! ROBOT: ${computerScore} | FLESHBAG: ${humanScore}
-        This is round ${rounds}.`)
+    for (let i = 0; i < 5; i++) {
+        console.log(i)
+        if (hChoice === 'rock' && cChoice === 'paper') {
+            outcome = 'ROBOT WINS'
+            computerScore += 1
+        } else if (hChoice === 'paper' && cChoice === 'rock') {
+            outcome = 'FLESHTHING WINS'
+            humanScore += 1
+        } else if (hChoice === 'paper' && cChoice === 'scissors') {
+            outcome = 'ROBOT WINS'
+            computerScore += 1
+        } else if (hChoice === 'scissors' && cChoice === 'paper') {
+            outcome = 'FLESHTHING WINS'
+            humanScore += 1
+        } else if (hChoice === 'scissors' && cChoice === 'rock') {
+            outcome = 'ROBOT WINS'
+            computerScore += 1
+        } else if (hChoice === 'rock' && cChoice === 'scissors') {
+            outcome = 'FLESHTHING WINS'
+            humanScore += 1
+        } else if (hChoice === cChoice) {
+            outcome = 'YOU DRAW LOSERS!'
+        }
+
+        console.log('exit loop')
+
+        rounds++
+
+        console.log('rounds added')
+
+        console.log(`Guess what?! ${outcome}!
+            ROBOT: ${computerScore} | FLESHBAG: ${humanScore}
+            This is round ${rounds}.
+            FLESH CHOSE: ${humanChoiceFunction} | ROBOT CHOSE: ${computerChoiceFunction}`)
+
+        console.log('alert finished')
 
         getHumanChoice()
         getComputerChoice()
+
+        console.log('retriggered functions')
     }
+
     alert('GAME OVER!')
 }
 
@@ -80,32 +92,3 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRoundTest(humanSelection, computerSelection)
-
-// function playRound(humanChoice, computerChoice) {
-//     // humanChoice = humanChoice.toLowerCase()
-//     // computerChoice = computerChoice.toLowerCase()
-
-//     switch (true) {
-//         case humanChoice === 'rock' && computerChoice === 'scissors':
-//             console.log('HUMAN WINS');
-//             break;
-//         case humanChoice === 'scissors' && computerChoice === 'rock':
-//             console.log('MACHINE WINS');
-//             break;
-
-//     }
-
-
-
-// console.log(getHumanChoice())
-// console.log(getComputerChoice().toLowerCase() + '***')
-
-// playRound(humanSelection, computerSelection);
-
-//send it to the script
-//activate COMPUTER player randomiser number
-//store computer value
-//compare it with player
-
-//## OUTCOME ##
-// display some message to say win or lose
