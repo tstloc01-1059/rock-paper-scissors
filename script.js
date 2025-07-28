@@ -1,8 +1,5 @@
 // ## VARIABLES ##
 
-let humanChoiceFunction = ''
-let computerChoiceFunction = ''
-
 // ## COMPUTER ##
 
 function getComputerChoice() {
@@ -21,7 +18,6 @@ function getComputerChoice() {
             computerChoice = 'scissors';
             break;
     }
-    computerChoiceFunction = computerChoice;
     return computerChoice // returning the translated outcome
 
 }
@@ -30,7 +26,6 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanChoice = prompt('What shall your hand be?');
-    humanChoiceFunction = humanChoice
     return humanChoice
 }
 
@@ -38,54 +33,43 @@ function getHumanChoice() {
 
 function playRoundTest(hChoice, cChoice) {
     hChoice = hChoice.toLowerCase()
-    let computerScore = 0
-    let humanScore = 0
     let outcome = ''
-    let rounds = 0
-    for (let i = 0; i < 5; i++) {
-        console.log(i)
-        if (hChoice === 'rock' && cChoice === 'paper') {
-            outcome = 'ROBOT WINS'
-            computerScore += 1
-        } else if (hChoice === 'paper' && cChoice === 'rock') {
-            outcome = 'FLESHTHING WINS'
-            humanScore += 1
-        } else if (hChoice === 'paper' && cChoice === 'scissors') {
-            outcome = 'ROBOT WINS'
-            computerScore += 1
-        } else if (hChoice === 'scissors' && cChoice === 'paper') {
-            outcome = 'FLESHTHING WINS'
-            humanScore += 1
-        } else if (hChoice === 'scissors' && cChoice === 'rock') {
-            outcome = 'ROBOT WINS'
-            computerScore += 1
-        } else if (hChoice === 'rock' && cChoice === 'scissors') {
-            outcome = 'FLESHTHING WINS'
-            humanScore += 1
-        } else if (hChoice === cChoice) {
-            outcome = 'YOU DRAW LOSERS!'
-        }
 
-        console.log('exit loop')
-
-        rounds++
-
-        console.log('rounds added')
-
-        console.log(`Guess what?! ${outcome}!
-            ROBOT: ${computerScore} | FLESHBAG: ${humanScore}
-            This is round ${rounds}.
-            FLESH CHOSE: ${humanChoiceFunction} | ROBOT CHOSE: ${computerChoiceFunction}`)
-
-        console.log('alert finished')
-
-        getHumanChoice()
-        getComputerChoice()
-
-        console.log('retriggered functions')
+    if (hChoice === 'rock' && cChoice === 'paper') {
+        outcome = 'ROBOT WINS'
+        // computerScore += 1
+        console.log('a1')
+    } else if (hChoice === 'paper' && cChoice === 'rock') {
+        outcome = 'FLESHTHING WINS'
+        // humanScore += 1
+        console.log('a2')
+    } else if (hChoice === 'paper' && cChoice === 'scissors') {
+        outcome = 'ROBOT WINS'
+        // computerScore += 1
+        console.log('b1')
+    } else if (hChoice === 'scissors' && cChoice === 'paper') {
+        outcome = 'FLESHTHING WINS'
+        // humanScore += 1
+        console.log('b2')
+    } else if (hChoice === 'scissors' && cChoice === 'rock') {
+        outcome = 'ROBOT WINS'
+        // computerScore += 1
+        console.log('c1')
+    } else if (hChoice === 'rock' && cChoice === 'scissors') {
+        outcome = 'FLESHTHING WINS'
+        // humanScore += 1
+        console.log('c2')
+    } else if (hChoice === cChoice) {
+        outcome = 'YOU DRAW LOSERS!'
+        console.log('d1')
     }
 
-    alert('GAME OVER!')
+    console.log('pre-alert console')
+
+    console.log(`human: ${hChoice} | robot: ${cChoice} ||| ${outcome}`)
+
+    console.log('exit loop')
+
 }
 
 const humanSelection = getHumanChoice();
