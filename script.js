@@ -1,3 +1,10 @@
+//## VARIABLES ##
+
+let humanScore = 0
+let computerScore = 0
+let drawCount = 0
+// let rounds = humanScore + computerScore + drawCount
+
 // ## COMPUTER ##
 
 function getComputerChoice() {
@@ -23,60 +30,59 @@ function getComputerChoice() {
 //## USER ##
 
 function getHumanChoice() {
-    let humanChoice = prompt('What shall your hand be?');
-    return humanChoice
+    let humanChoice = prompt('rock, paper, or scissors bro?');
+    return humanChoice.toLowerCase()
 }
 
 // ## ROUND ##
 
 function playRound(hChoice, cChoice) {
-    hChoice = hChoice.toLowerCase()
-    let outcome = ''
+    let outcome = '' // this updates with the string of the comparison logic 
 
     if (hChoice === 'rock' && cChoice === 'paper') {
         outcome = 'ROBOT WINS'
-        // computerScore += 1
-        console.log('a1')
+        computerScore++
     } else if (hChoice === 'paper' && cChoice === 'rock') {
         outcome = 'FLESHTHING WINS'
-        // humanScore += 1
-        console.log('a2')
+        humanScore++
     } else if (hChoice === 'paper' && cChoice === 'scissors') {
         outcome = 'ROBOT WINS'
-        // computerScore += 1
-        console.log('b1')
+        computerScore++
     } else if (hChoice === 'scissors' && cChoice === 'paper') {
         outcome = 'FLESHTHING WINS'
-        // humanScore += 1
-        console.log('b2')
+        humanScore++
     } else if (hChoice === 'scissors' && cChoice === 'rock') {
         outcome = 'ROBOT WINS'
-        // computerScore += 1
-        console.log('c1')
+        computerScore++
     } else if (hChoice === 'rock' && cChoice === 'scissors') {
         outcome = 'FLESHTHING WINS'
-        // humanScore += 1
-        console.log('c2')
+        humanScore++
     } else if (hChoice === cChoice) {
         outcome = 'YOU DRAW LOSERS!'
-        console.log('d1')
-    }
+        drawCount++
+    } else { outcome = 'invalid input!' }
 
-    console.log('pre-alert console')
-
-    console.log(`human: ${hChoice} | robot: ${cChoice} ||| ${outcome}`)
-
-    console.log('exit loop')
+    console.log(`human: ${hChoice} | robot: ${cChoice} ||| ${outcome}
+        humanscore: ${humanScore} robotscore: ${computerScore} drawscore: ${drawCount}`
+    )
 
 }
 
 // ## GAME ##
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 function playGame() {
-playRound(humanSelection, computerSelection)
+    let round = 0
+
+    while (round < 5) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection)
+        round++
+    }
+
+    if (humanScore > computerScore) {
+        console.log('CONGRATS YOU DEFEATED THE AI OVERLORD')
+    } else { console.log('sounds like zion is done for') }
 }
 
 playGame()
