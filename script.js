@@ -1,8 +1,3 @@
-//we need a computer playing
-//we need a way for a user to decide what move to make
-//a way to compare both
-//a way to track rounds
-
 // ## VARIABLES ##
 
 // let computerChoice = ''
@@ -17,15 +12,15 @@ function getComputerChoice() {
     let result = Math.floor(Math.random() * 3) //create random number between 0 and 2
     switch (result) { //assign 0,1,2 a name rock, paper, scissors
         case 0:
-            computerChoice = 'Rock';
+            computerChoice = 'rock';
             break;
 
         case 1:
-            computerChoice = 'Paper';
+            computerChoice = 'paper';
             break;
 
         case 2:
-            computerChoice = 'Scissors';
+            computerChoice = 'scissors';
             break;
     }
 
@@ -33,16 +28,16 @@ function getComputerChoice() {
 
 }
 
-console.log(getComputerChoice())
+//## USER ##
 
-// //## USER ##
+function getHumanChoice() {
+    let humanChoice = prompt('What shall your hand be?');
+    return humanChoice
+}
 
-// function getHumanChoice() {
-//     return humanChoice
-// }
+getHumanChoice()
 
-// // ## ROUND 
-// // ## 
+// ## ROUND ##
 
 // function playRound(humanChoice, computerChoice) {
 //     // humanChoice = humanChoice.toLowerCase()
@@ -90,8 +85,3 @@ console.log(getComputerChoice())
 
 //## OUTCOME ##
 // display some message to say win or lose
-
-//## LOGIC ##
-// rock beats scissors
-// paper beats rock
-// scissors beat paper
